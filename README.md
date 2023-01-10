@@ -21,6 +21,7 @@
 
 ---
 <p>
+
 Internet retail, also known as **e-commerce**, is the largest sector of the electronics industry, generating an estimated $29 trillion in 2019. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to their prevalence, understanding the fundamental architecture of these platforms will benefit you as a full-stack web developer.
 
 Your task is to build the back end for an e-commerce site by modifying starter code. You’ll configure a working Express.js API to use Sequelize to interact with a MySQL database.
@@ -65,7 +66,7 @@ Because this application won’t be deployed, you’ll also need to provide a li
 <https://user-images.githubusercontent.com/10051887/211125761-4b29c75f-a8e7-4d8d-b292-87a0440d30c8.mp4>
 
 ---
->>>>>>> 05f6fb252181616c0b3a4b28c80c9a98766ab560
+
 
 ## Inquire
 
