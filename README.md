@@ -1,7 +1,7 @@
 # ORM E-Commerce-Back-End
 
 <p align="center">
-<img src=""/>
+<img src="./Assets/2023-01-10%2016_02_52-Logo%20maker;%20online%20logo%20generator%20-%20LogoAi.com.png"/>
 </p>
 
 ## Table of Contents
@@ -76,7 +76,7 @@ Feel free to contact me at bryanq2008@live.com with any questions about this pro
 
 ---
 
-Copyright (c) [2023] [SQL: Employee Tracker by Bryan A Quero]
+Copyright (c) [2023] [ORM: E-Commerce-Back-End by Bryan A Quero]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
