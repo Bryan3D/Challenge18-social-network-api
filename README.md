@@ -12,8 +12,8 @@
   - [Table of Contents](#table-of-contents)
   - [Project Description](#project-description)
   - [Installation and Test Instructions](#installation-and-test-instructions)
-  - [SQL: Employee Tracker Demo Video and Images](#sql-employee-tracker-demo-video-and-images)
-  - [SQL: Employee Tracker Demo Video](#sql-employee-tracker-demo-video)
+  - [E-Commerce-Back-End Demo Images](#e-commerce-back-end-demo-images)
+  - [E-Commerce-Back-End Demo Video](#e-commerce-back-end-demo-video)
   - [Inquire](#inquire)
   - [MIT License](#mit-license)
 
@@ -39,13 +39,13 @@ Because this application won’t be deployed, you’ll also need to provide a li
 - MySQ2
 - Express.js
 - Inquirer Package
-- Console.Table Package
+- dotenv
 
 ---
 
 ---
 
-## SQL: Employee Tracker Demo Video and Images
+## E-Commerce-Back-End Demo Images
 
 ---
 
@@ -60,7 +60,7 @@ Because this application won’t be deployed, you’ll also need to provide a li
 
 ---
 
-## SQL: Employee Tracker Demo Video
+## E-Commerce-Back-End Demo Video
 
 ---
 
