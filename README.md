@@ -12,10 +12,6 @@
   - [Table of Contents](#table-of-contents)
   - [Project Description](#project-description)
   - [Installation and Test Instructions](#installation-and-test-instructions)
-  - [E-Commerce-Back-End Demo Images](#e-commerce-back-end-demo-images)
-  - [Note](#note)
-  - [I got this error as shown in the image below....](#i-got-this-error-as-shown-in-the-image-below)
-  - [](#)
   - [E-Commerce-Back-End Demo Video](#e-commerce-back-end-demo-video)
   - [Inquire](#inquire)
   - [MIT License](#mit-license)
@@ -48,30 +44,11 @@ Because this application won’t be deployed, you’ll also need to provide a li
 
 ---
 
-## E-Commerce-Back-End Demo Images
-
----
-##  Note 
-
-## I got this error as shown in the image below.... 
-  
-
-![Alt text](Assets/error.png)
----
-![2023-01-06 21_12_00-README md - ORM E-Commerce-Back-End](""
-
-![Alt text]("")
-
-![Alt text]("")
-
-![Alt text]("")
-
----
-
 ## E-Commerce-Back-End Demo Video
 
 ---
- 
+[label](Assets/DemoVideo.mp4)
+
 <"">
 
 ---
