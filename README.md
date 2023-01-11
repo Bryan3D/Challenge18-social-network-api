@@ -56,7 +56,7 @@ Because this application won’t be deployed, you’ll also need to provide a li
 ## I got this error as shown in the image below.... 
   
 
-![Alt text](Assets/Error_run.png)
+![Alt text](Assets/error.png)
 ---
 ![2023-01-06 21_12_00-README md - ORM E-Commerce-Back-End](""
 
