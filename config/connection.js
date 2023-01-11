@@ -1,6 +1,7 @@
-require('dotenv').config();
+require('dotenv').config({path:'../.env'});
 
-import Sequelize from 'sequelize';
+// import Sequelize from 'sequelize';
+const Sequelize = require('sequelize');
 
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
@@ -12,4 +13,4 @@ const sequelize = process.env.JAWSDB_URL
       },
     });
 
-export default sequelize;
+module.exports = sequelize;
