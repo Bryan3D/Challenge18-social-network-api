@@ -13,6 +13,8 @@
   - [Project Description](#project-description)
   - [Installation and Test Instructions](#installation-and-test-instructions)
   - [E-Commerce-Back-End Demo Images](#e-commerce-back-end-demo-images)
+  - [Note](#note)
+  - [](#)
   - [E-Commerce-Back-End Demo Video](#e-commerce-back-end-demo-video)
   - [Inquire](#inquire)
   - [MIT License](#mit-license)
@@ -48,23 +50,27 @@ Because this application won’t be deployed, you’ll also need to provide a li
 ## E-Commerce-Back-End Demo Images
 
 ---
+##  Note 
 
+- I got this error as shown in the image below.... 
+
+![Alt text](Assets/Error_run.png)
 ---
-![2023-01-06 21_12_00-README md - SQL-Employee-Tracker - Visual Studio Code](https://user-images.githubusercontent.com/10051887/211127011-02cd2856-15d9-4849-9651-d9f5029a52e4.png)
+![2023-01-06 21_12_00-README md - ORM E-Commerce-Back-End](""
 
-![Alt text](assets/img/2023-01-06%2019_46_23-server.js%20-%20SQL-Employee-Tracker%20-%20Visual%20Studio%20Code.png)
+![Alt text]("")
 
-![Alt text](assets/img/2023-01-06%2019_47_42-server.js%20-%20SQL-Employee-Tracker%20-%20Visual%20Studio%20Code.png)
+![Alt text]("")
 
-![Alt text](assets/img/2023-01-06%2019_48_04-server.js%20-%20SQL-Employee-Tracker%20-%20Visual%20Studio%20Code.png)
+![Alt text]("")
 
 ---
 
 ## E-Commerce-Back-End Demo Video
 
 ---
-
-<https://user-images.githubusercontent.com/10051887/211125761-4b29c75f-a8e7-4d8d-b292-87a0440d30c8.mp4>
+ 
+<"">
 
 ---
 
