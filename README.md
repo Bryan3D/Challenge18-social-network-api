@@ -14,6 +14,7 @@
   - [Installation and Test Instructions](#installation-and-test-instructions)
   - [E-Commerce-Back-End Demo Images](#e-commerce-back-end-demo-images)
   - [Note](#note)
+  - [I got this error as shown in the image below....](#i-got-this-error-as-shown-in-the-image-below)
   - [](#)
   - [E-Commerce-Back-End Demo Video](#e-commerce-back-end-demo-video)
   - [Inquire](#inquire)
@@ -52,7 +53,8 @@ Because this application won’t be deployed, you’ll also need to provide a li
 ---
 ##  Note 
 
-- I got this error as shown in the image below.... 
+## I got this error as shown in the image below.... 
+  
 
 ![Alt text](Assets/Error_run.png)
 ---
