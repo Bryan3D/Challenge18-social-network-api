@@ -3,19 +3,65 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
 
-// get all products
+
+// get all products and include its associated Category and Tag data (using the ProductTag model) in the response body (HINT: You'll need to use the ProductTag model to include the associated tag data)
+
 router.get('/', (req, res) => {
-  // find all products
-  // be sure to include its associated Category and Tag data
+
+  // To find all the products along with their associated categories and tags, we'll execute the following query: 
+  
+  Product.findAll({
+    attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
+    include: [
+      {
+        model: Category,
+        attributes: ['id', 'category_name'],
+      },
+      {
+        model: Tag,
+        attributes: ['id', 'tag_name'],
+      },
+    ],
+  })
+    .then((dbProductData) => res.json(dbProductData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+
 });
 
-// get one product
+
+// get one product by its `id` value and include its associated Category and Tag data in the response body (HINT: You'll need to use the ProductTag model to include the associated tag data)
+
 router.get('/:id', (req, res) => {
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
+  
+
+  // To find a single product by its primary key, we'll execute the following query:
+  // find a single product by its `id` and include its associated Category and Tag data.
+  
+  Product.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
+    include: [
+      {
+        model: Category,
+        attributes: ['id', 'category_name'],
+      },
+      {
+        model: Tag,
+        attributes: ['id', 'tag_name'],
+      },
+    ],
+  })
+
 });
 
 // create new product
+// The product's `price` and `stock` values should be set to 0 by default. If a `category_id` is provided, the product should be associated with that category. If no `category_id` is provided, the product can still be created, but it should not be associated with a category. If a tag is provided, the product should be associated with that tag by creating a new ProductTag. If no tag is provided, the product can still be created, but it should not be associated with a tag.
+
 router.post('/', (req, res) => {
   /* req.body should look like this...
     {
@@ -91,6 +137,23 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((productData) => {
+      if (!productData) {
+        res.status(404).json({ message: 'No product found with this id!' });
+        return;
+      }
+      res.json(productData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+
 });
 
 module.exports = router;

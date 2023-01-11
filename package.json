@@ -1,0 +1,29 @@
+{
+  "name": "orm_e-commerce-back-end",
+  "version": "1.0.0",
+  "description": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bryan3D/ORM_E-Commerce-Back-End.git"
+  },
+  "author": "Bryan A Quero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bryan3D/ORM_E-Commerce-Back-End/issues"
+  },
+  "homepage": "https://github.com/Bryan3D/ORM_E-Commerce-Back-End#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "requirer": "^0.0.4",
+    "sequelize": "^6.28.0"
+  }
+}

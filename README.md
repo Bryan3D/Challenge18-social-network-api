@@ -37,6 +37,7 @@ Because this application won’t be deployed, you’ll also need to provide a li
 ---
 
 - MySQ2
+- Express.js
 - Inquirer Package
 - Console.Table Package
 
