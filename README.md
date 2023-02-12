@@ -50,7 +50,7 @@ The exact features and functionality of a social net project will depend on the 
 
 ## Social Net Demo Video
 ---
-<p>Note :" the app running well in vscode, but I dont know why have error insomnia"</p>
+
 
 
 
