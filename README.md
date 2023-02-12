@@ -52,7 +52,7 @@ The exact features and functionality of a social net project will depend on the 
 ---
 <p>Note :" the app running well in vscode, but I dont know why have error insomnia"</p>
 
-https://user-images.githubusercontent.com/10051887/211880542-f889bb39-d839-49f2-82f1-46868cd2176e.mp4
+
 
 
 
