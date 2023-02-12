@@ -1,31 +1,34 @@
-# ORM E-Commerce-Back-End
-
+<span >
 <p align="center">
-<img src="./Assets/2023-01-10%2016_02_52-Logo%20maker;%20online%20logo%20generator%20-%20LogoAi.com.png"/>
+
 </p>
+<p>
+<img src="./Assets/2023-01-10%2016_02_52-Logo.com.png"/>
+</p>
+</span>
+
 
 ## Table of Contents
 
 ---
 
-- [ORM E-Commerce-Back-End](#orm-e-commerce-back-end)
-  - [Table of Contents](#table-of-contents)
-  - [Project Description](#project-description)
-  - [Installation and Test Instructions](#installation-and-test-instructions)
-  - [E-Commerce-Back-End Demo Video](#e-commerce-back-end-demo-video)
-  - [Inquire](#inquire)
-  - [MIT License](#mit-license)
+- [Table of Contents](#table-of-contents)
+- [Project Description](#project-description)
+- [Installation and Test Instructions](#installation-and-test-instructions)
+- [Social Net Demo Video](#social-net-demo-video)
+- [Inquire](#inquire)
+- [MIT License](#mit-license)
 
 ## Project Description
 
 ---
 <p>
 
-Internet retail, also known as **e-commerce**, is the largest sector of the electronics industry, generating an estimated $29 trillion in 2019. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to their prevalence, understanding the fundamental architecture of these platforms will benefit you as a full-stack web developer.
+**`SOCIAL NET`** project is likely to be a web or mobile application that allows users to connect with each other, share content, and interact in various ways. It could include features such as: User profiles: where users can create a personal profile, upload photos and videos, and share information about themselves. **`Newsfeed:`** a personalized stream of content shared by friends, including updates, photos, videos, and other posts. 
 
-Your task is to build the back end for an e-commerce site by modifying starter code. You’ll configure a working Express.js API to use Sequelize to interact with a MySQL database.
+**`Messaging:`** a private messaging system that allows users to communicate with each other directly. **`Groups:`** the ability for users to create and join groups based on shared interests, hobbies, or communities. **`Notifications:`** notifications that keep users informed of new activity, such as when a friend posts a new update or when someone comments on a post. **`Search:`** the ability for users to search for other users, groups, and content on the platform. **`Privacy:`** options for controlling who can see a user's profile, posts, and other information, and who can interact with them.
 
-Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality and all of the acceptance criteria being met. You’ll need to submit a link to the video and add it to the readme of your project.
+The exact features and functionality of a social net project will depend on the goals and target audience of the project, as well as the resources and technology available. It could range from a simple social networking platform to a full-featured social media platform like Facebook or Twitter .
 
 </p>
 
@@ -35,16 +38,17 @@ Because this application won’t be deployed, you’ll also need to provide a li
 
 ---
 
-- MySQ2
+- MongoDB
+- Mongoose
 - Express.js
-- Inquirer Package
+- Node
 - dotenv
 
 ---
 
 ---
 
-## E-Commerce-Back-End Demo Video
+## Social Net Demo Video
 ---
 <p>Note :" the app running well in vscode, but I dont know why have error insomnia"</p>
 
@@ -63,7 +67,7 @@ Feel free to contact me at bryanq2008@live.com with any questions about this pro
 
 ---
 
-Copyright (c) [2023] [ORM: E-Commerce-Back-End by Bryan A Quero]
+Copyright (c) [2023] [Social Net.LLC by Bryan A Quero]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
