@@ -2,7 +2,7 @@ const { Schema, model, Types } = require('mongoose');
 
 
 // Declare the Schema of the Mongo model
-const userSchema = new mongoose.Schema(
+const userSchema = new Schema(
   {
   username: {
     type: String,
@@ -51,7 +51,8 @@ userSchema.virtual("fCount").get(function () {
   return this.friends.length;
 })
 
+const User = model('User', userSchema);
 
 //Export the model
-module.exports = mongoose.model('User', userSchema);
+module.exports = User;
 

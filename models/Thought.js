@@ -5,10 +5,10 @@ const { Schema, model, Types } = require('mongoose')
 const moment = require('moment'); 
 
 // Declare the Reaction Schema of the Mongo model
-const reactSchema = new mongoose.Schema(
+const reactSchema = new Schema(
   {
     reactId:{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         default: () => new mongoose.Types.ObjectId()
     },
     reactBody:{
@@ -61,7 +61,7 @@ const reactSchema = new mongoose.Schema(
   
   // Declare the Schema of the Mongo model
   
-  const thoughtSchema = new mongoose.Schema(
+  const thoughtSchema = new Schema(
     {
       thoughtText:{
         type:String,
@@ -94,7 +94,7 @@ const reactSchema = new mongoose.Schema(
   );
 
 // Total amount of user friends
-const CounterSchema = new mongoose.Schema({
+const CounterSchema = new Schema({
   count: {
     type: Number,
     default: 0
@@ -105,10 +105,11 @@ CounterSchema.virtual('incrementedCount').get(function () {
   return this.count + 1;
 });
 
-const Counter = mongoose.model('Counter', CounterSchema);
-const Thought = mongoose.model('Thought', thougthSchema);
+const Counter = model('Counter', CounterSchema);
+const Thought = model('Thought', thoughtSchema);
 
-module.exports = mongoose.model('User', userSchema);
+
+
 
 //Export the model
 module.exports = Counter;
