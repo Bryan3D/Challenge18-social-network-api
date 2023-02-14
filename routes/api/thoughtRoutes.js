@@ -1,33 +1,37 @@
 const router = require('express').Router();
-// This code uses destructuring assignment to import functions from a module named ThoughtController.
 const {
-  getThought,
-  getSinglerThought,
-  createThought,
+  getAllThoughts,
+  addThought,
+  getThoughtById,
   updateThought,
-  deleteThought,
-  createReaction,
-  deleteReaction
-} = require('../../controllers/ThoughtController');
+  removeThought,
+  addReaction,
+  removeReaction
+} = require('../../controllers/thought-controller');
+const { route } = require('./user-routes');
 
-// This code is setting up a route in an Express.js application. The route is being defined as the root path ('/'), and it is using the get and post methods.
-router.route('/').get(getThought).post(createThought);
+// The handler function for the route is getAllThoughts, which should be defined elsewhere in the code. When a GET request is made to the root URL, the getAllThoughts function will be called to handle the request.
+router.route('/').get(getAllThoughts);
 
-// This code is setting up the '/:thoughtId' path to handle GET, PUT, and DELETE requests, and it is specifying which functions should be executed for each type of request. The thoughtId path parameter is used to identify which thought the request is acting upon.
+// /api/thoughts/<userId>
+router.route('/:userId').post(addThought);
 
-router.route('/:thoughtId')
-  .get(getSinglerThought)
-  .put(updateThought)
-  .delete(deleteThought);
+// /api/thoughts/<thoughtId>
+router.route('/:thoughtId').get(getThoughtById).put(updateThought)
 
-//This code is setting up the '/:thoughtId/reactions' path to handle POST requests, and it is specifying that the createReaction function should be executed for this type of request. The thoughtId and reactions path parameters are used to identify which thought the reaction is being added to.
+// /api/thoughts/<userId>/<thoughtId>
+router
+  .route('/:userId/:thoughtId')
+  .delete(removeThought);
 
-router.route('/:thoughtId/reactions')
-  .post(createReaction);
-  
-  router.route('/:thoughtId/reactions/:reactionId')
-    .delete(deleteReaction);
+// /api/thoughts/<thoughtId>/reactions
+router
+  .route('/:thoughtId/reactions')
+  .post(addReaction);
 
-
+// /api/<thoughtId>/reactions/<reactionId>
+router
+  .route('/:thoughtId/reactions/:reactionId')
+  .delete(removeReaction);
 
 module.exports = router;

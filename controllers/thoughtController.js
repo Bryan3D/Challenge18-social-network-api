@@ -1,122 +1,118 @@
+const { Thought } = require('../models/Thought');
+const User = require('../models/User');
 
-const { User, Thought } = require('../models');
-
-module.exports = {
-
-  // "Get all thoughts" This code defines a function named getThought which is likely to be used as a route handler for an HTTP GET request in a Node.js application.
-
-  getThought(rep, res) {
+const thoughtController = {
+  // get all thoughts
+  getAllThoughts(req, res) {
     Thought.find({})
-      .then((thought) => res.json(thought))
-      .catch((err) => res.status(500).json(err));
+      // .populate('reactionId')
+      .then(dbThoughtData => res.json(dbThoughtData))
+      .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+      });
   },
 
-  // function named getSingleThought which is likely to be used as a route handler for an HTTP GET request in a Node.js application to retrieve a single thought document based on its ID.
-
-  getSingleThought(req, res) {
-    Thought.findOne({ _id: req.params.thoughtID })
-      .select('-__v')
-      .then((thought) =>
-        !thought
-          ? res.status(404).json({ message: "No Thought find with this ID!" })
-          : res.json(thought)
-
-      )
-      .catch((err) => res.status(500).json(err));
+  // get one user by id
+  getThoughtById({ params }, res) {
+    Thought.findOne({ _id: params.thoughtId })
+      .then(dbThoughtData => {
+        if (!dbThoughtData) {
+          res.status(404).json({ message: 'No thought found with this id!' });
+          return;
+        }
+        res.json(dbThoughtData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+      });
   },
 
-  //This function creates a new "Thought" document using the data provided in the request body, then it finds the user associated with the thought and updates the user's "thoughts" array to include the newly created thought.
-
-  createThought(req, res) {
-    Thought.create(req.body)
+  // add thought to user
+  addThought({ params, body }, res) {
+    console.log(body);
+    Thought.create(body)
       .then(({ _id }) => {
         return User.findOneAndUpdate(
-          { _id: req.body.userId },
-          { $push: { thoughts: _Id } },
+          { _id: params.userId },
+          { $push: { thoughts: _id } },
           { new: true }
-
-
         );
-
       })
-      .then((thought) =>
-        !thought
-          ? res.status(404).json({ message: "No Thought find with this ID!" })
-          : res.json(thought)
-      )
-      .catch((err) => res.status(500).json(err));
+      .then(dbUserData => {
+        if (!dbUserData) {
+          res.status(404).json({ message: 'No user found with this id!' });
+          return;
+        }
+        res.json(dbUserData);
+      })
+      .catch(err => res.json(err));
   },
 
-  // This function updates an existing "Thought" document using the data provided in the request body.
-  updateThought(req, res) {
+  // update thought by id
+  updateThought({ params, body }, res) {
+    Thought.findOneAndUpdate({ _id: params.thoughtId }, body, { new: true, runValidators: true })
+      .then(dbThoughtData => {
+        if (!dbThoughtData) {
+          res.status(404).json({ message: 'No thought found with this id!' });
+          return;
+        }
+        res.json(dbThoughtData);
+      })
+      .catch(err => res.status(400).json(err));
+  },
+
+  // remove thought
+  removeThought({ params }, res) {
+    Thought.findOneAndDelete({ _id: params.thoughtId })
+      .then(deletedThought => {
+        if (!deletedThought) {
+          return res.status(404).json({ message: 'No thought with this id!' });
+        }
+        return User.findOneAndUpdate(
+          { _id: params.userId },
+          { $pull: { thoughts: params.thoughtId } },
+          { new: true }
+        );
+      })
+      .then(dbUserData => {
+        if (!dbUserData) {
+          res.status(404).json({ message: 'No user found with this id!' });
+          return;
+        }
+        res.json(dbUserData);
+      })
+      .catch(err => res.json(err));
+  },
+
+  // add reaction
+  addReaction({ params, body }, res) {
     Thought.findOneAndUpdate(
-      { _id: req.params.thoughtId },
-      { $set: req.body },
-      { runValidators: true, New: true }
+      { _id: params.thoughtId },
+      { $addToSet: { reactions: body } },
+      { new: true, runValidators: true }
     )
-
-      .then((user) =>
-        !user
-          ? res.status(404).json({ message: "No Thought find with this ID!" })
-          : res.json(thought)
-      )
-      .catch((err) => res.status(500).json(err));
+      .then(dbThoughtData => {
+        if (!dbThoughtData) {
+          return res.status(404).json({ message: 'No thought found with this id!' });
+        }
+        res.json(dbThoughtData);
+      })
+      .catch(err => res.json(err));
   },
 
-
-  //This code is a function that deletes a thought and updates the associated user in a MongoDB database using Mongoose.
-
-  deleteThought(req, res) {
-    Thought.findOneAndDelete({ _id: req.params.thoughtId })
-      .then((thought) =>
-        !thought
-          ? res.status(404).json({ massage: "No thought find with this ID!" })
-          : User.findOneAndUpdate(
-            { thought: req.params.thoughtId },
-            { $pull: { thoughts: req.params.thoughtId } },
-            { new: true }
-          )
-      )
-      .then((user) =>
-        !user
-          ? res.status(404).json({ massage: 'Thought deleted, but no user found' })
-          : res.status({ message: 'Thought succesfully delete' })
-      )
-      .catch((err) => res.status(500).json(err));
-  },
-
-  // This code is a function that creates a reaction for a thought in a MongoDB database using Mongoose.
-
-  createReaction(req, res) {
+  // remove reaction
+  removeReaction({ params }, res) {
+    console.log(params.thoughtId, params.reactionId);
     Thought.findOneAndUpdate(
-      { _id: req.params.thoughtId },
-      { $addToSet: { reactions: req.body } },
+      { _id: params.thoughtId },
+      { $pull: { reactions: { reactionId: params.reactionId } } },
       { runValidators: true, new: true }
     )
-      .then((thought) =>
-        !thought
-          ? res.status(404).json({ message: "No thought firend with ID!" })
-          : res.json(thought)
-      )
-      .catch((err) => res.status(500).json(err));
-        
-  },
-
-  // This code is a function that deletes a reaction for a thought in a MongoDB database using Mongoose.
-
-  deleteReaction(req, res) {
-    Thought.findOneAndDelete(
-      { _id: req.params.thoughtId },
-      { $pull: { reactions: { reactionId: req.params.reactionId } } },
-      { runValidators: true, new: true }
-    )
-      .then((thought) =>
-        !thought
-          ? res.status(404).json({ message: "No thought find with this ID! " })
-          : res.json(thought)
-      )
-
-      .catch((err) => res.status(500).json(err))
-  },
-
+      .then(dbUserData => res.json(dbUserData))
+      .catch(err => res.json(err));
+  }
 };
+
+module.exports = thoughtController;
