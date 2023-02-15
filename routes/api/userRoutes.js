@@ -1,5 +1,7 @@
 const router = require('express').Router();
 
+// These functions likely correspond to various operations that can be performed on the "user" resource in the application. this code snippet shows how the logic for handling requests is separated from the code that defines the routes themselves. 
+
 const {
   getAllUsers,
   getUserById,
@@ -10,26 +12,24 @@ const {
   removeFriend
 } = require('../../controllers/userController');
 
-// Set up GET all and POST at /api/users
-router
-  .route('/')
-  .get()
-  .post();
+// the "user" resource in a Node.js server using the Express framework. The route is configured to match HTTP requests to the root path / of the resource.
 
-// /api/users/:id
+
+// This code snippet defines a route for the "user" resource in a Node.js server using the Express framework. The route is configured to match HTTP requests to a path that includes an id parameter.
 router
   .route('/:id')
   .get(getUserById)
   .put(updateUser)
   .delete(deleteUser)
 
-// /api/users/:userId/friends/:friendId
+// The route is configured to match HTTP requests to a path that includes an id parameter for the user whose friends list will be updated and a friendId parameter for the friend being added or removed.
 router
   .route('/:id/friends/:friendId')
   .post(addFriend)
   .delete(removeFriend);
 
-// /api/users
+// The route is configured to match HTTP requests to the root path / of the resource.This route handles two different HTTP methods.
+
 router
   .route('/')
   .get(getAllUsers)

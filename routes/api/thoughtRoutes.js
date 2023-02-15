@@ -10,13 +10,14 @@ const {
   addReaction,
   removeReaction
 } = require('../../controllers/thoughtController');
-const { route } = require('./userRoutes');
 
-// The handler function for the route is getAllThoughts, which should be defined elsewhere in the code. When a GET request is made to the root URL, the getAllThoughts function will be called to handle the request.
-router.route('/').get(getAllThoughts);
+
+// The handler function for the route is getAllThoughts, which should be defined elsewhere in the code. When a GET request is made to the root URL, the getAllThoughts function will be called to handle the request.this code snippet shows how the logic for handling requests is separated from the code that defines the routes themselves. 
+
+router.route('/').get(getAllThoughts).post(addThought);
 
 // defining a route in a Node.js server using the Express framework. The route is configured to match any HTTP POST requests to a path that includes a userId parameter.
-router.route('/:userId').post(addThought);
+
 
 // This route is configured to match any HTTP GET or PUT requests to a path that includes a thoughtId parameter.
 router.route('/:thoughtId').get(getThoughtById).put(updateThought)

@@ -9,17 +9,14 @@ const userSchema = new Schema(
     required: true,
     unique: true,
     index: true,
-  },
+    },
+    
   email: {
     type: String,
     required: true,
     unique: true,
-
-    // This piece of code is a regular expression that is used to match a string to a valid email format.
-    match: [
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      "Please use a valid email address 📧",
-    ],
+    match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$/, 'Please fill a valid email address']
+    
     },
    
 
