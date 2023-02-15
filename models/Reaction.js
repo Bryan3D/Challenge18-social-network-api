@@ -1,5 +1,5 @@
 const { Schema } = require('mongoose');
-const data = require('../utils/data');
+const data = require('../utils/date');
 
 
 // Declare the Schema of the Mongo model
