@@ -51,7 +51,13 @@ The exact features and functionality of a social net project will depend on the 
 ## Social Net Demo Video
 ---
 
+![2023-02-15 15_26_14-Insomnia](https://user-images.githubusercontent.com/10051887/219147265-a5056990-3f11-4b4e-b4b2-b897a8950956.png)
 
+![2023-02-15 15_24_57-](https://user-images.githubusercontent.com/10051887/219147297-500fbfe6-99d9-4a78-bc94-934a565772b4.png)
+
+
+
+https://user-images.githubusercontent.com/10051887/219147425-da9e463e-b90b-4c1a-974e-7537ff66fb99.mp4
 
 
 
