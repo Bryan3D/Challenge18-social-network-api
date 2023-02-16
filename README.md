@@ -61,7 +61,7 @@ https://user-images.githubusercontent.com/10051887/219147425-da9e463e-b90b-4c1a-
 
 
 ## Social Net URL Link
-![Click Here](https://bryan3d.github.io/Challenge18SocialNetworkApi/)
+[Click Here](https://bryan3d.github.io/Challenge18SocialNetworkApi/)
 
 
 ---
